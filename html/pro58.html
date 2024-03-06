@@ -5,8 +5,8 @@
 <h2>Use of The class Attribute in JavaScript</h2>
 <p>Click the button to hide all elements with class name "city":</p>
 
-<button onclick="show()">show elements</button>
-<button onclick="hide()">Hide elements</button>
+
+<button onclick="btn()">elements</button>
 
 <h2 class="city">London</h2>
 <p>London is the capital of England.</p>
@@ -27,22 +27,17 @@
 
 <script>
     
-function hide() {
+function btn() {
     var x = document.getElementsByClassName("city");
     for (var i = 0; i < x.length; i++) {
+     if(x[i].style.display=="block"){
       x[i].style.display = "none";
-
     }
+    else{
+        x[i].style.display ="block";
+    } 
   }
-function show() {
-    var x = document.getElementsByClassName("city");
-    for (var i = 0; i < x.length; i++) {
-      x[i].style.display ="block";
-
-      
-    }
-  }
-
+}
 </script>
 
 </body>
