@@ -3,10 +3,12 @@
 <head>
 <style>
 #grad1 {
-  height: 200px;
+  height: 800px;
   background-color: red; /* For browsers that do not support gradients */
   background-image: radial-gradient(red, yellow, pink, green);
   animation: rotateColors 10s linear infinite; /* Define animation */
+  background-repeat: no-repeat;
+  
 }
 
 @keyframes rotateColors {
@@ -32,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateGradientColor() {
     currentIndex = (currentIndex + 1) % gradientColors.length;
     const newGradient = gradientColors.slice(currentIndex).concat(gradientColors.slice(0, currentIndex)).join(',');
-    grad1.style.backgroundImage = `radial-gradient(${newGradient})`;
+    grad1.style.backgroundImage = `conic-gradient(${newGradient})`;
   }
 
   // Update gradient colors every 2 seconds
-  setInterval(updateGradientColor, 2000);
+  setInterval(updateGradientColor, 200);
 });
 </script>
 
